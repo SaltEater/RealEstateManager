@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RealEstateManager</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <string name="filters">FILTERS</string>
+    <string name="modify">Modify</string>
+    <string name="static_map_query">https://maps.googleapis.com/maps/api/staticmap?size=300x300&amp;zoom=16&amp;markers=color:red|</string>
+    <string name="title_activity_maps">Map</string>
+
+
+</resources>

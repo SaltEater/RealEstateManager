@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Features">
+        <menu>
+            <item
+                android:id="@+id/nav_simulation"
+                android:icon="@drawable/ic_edit"
+                android:title="Simulation" />
+            <item
+                android:id="@+id/nav_map"
+                android:icon="@drawable/ic_map"
+                android:title="Map" />
+        </menu>
+    </item>
+
+</menu>

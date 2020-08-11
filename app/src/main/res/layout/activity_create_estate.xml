@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".controllers.activities.CreateEstateActivity">
+
+    <include
+        android:id="@+id/create_estate_toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_create_estate_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/estate_state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/estate_state_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_description"/>
+
+                <TextView
+                    android:id="@+id/estate_state_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/estate_state_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/estate_state_image"
+                    android:layout_marginStart="8dp"
+                    android:text="State of the estate"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/estate_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/estate_state_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/real_estate_agent_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Real estate agent name"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:startIconDrawable="@drawable/ic_person">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/real_estate_agent_name_ed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Switch
+                        android:id="@+id/sold_estate_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp"
+                        android:text="Sold"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/real_estate_agent_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_entry_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Entry date"
+                        android:layout_marginTop="8dp"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintTop_toBottomOf="@id/sold_estate_switch"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:startIconDrawable="@drawable/ic_date_range">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_entry_date_ed"
+                            android:focusable="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_sold_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Sold date"
+                        android:layout_marginVertical="8dp"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintTop_toBottomOf="@id/estate_entry_date"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:startIconDrawable="@drawable/ic_date_range">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_sold_date_ed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/general_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/address_layout"
+                app:layout_constraintEnd_toEndOf="@+id/activity_create_estate_layout"
+                app:layout_constraintStart_toStartOf="@+id/activity_create_estate_layout"
+                app:layout_constraintTop_toBottomOf="@+id/estate_state_layout">
+
+                <ImageView
+                    android:id="@+id/general_info_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="General information image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_home" />
+
+                <TextView
+                    android:id="@+id/general_info_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/general_info_image"
+                    app:layout_constraintStart_toEndOf="@+id/general_info_image"
+                    android:text="General informations" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/general_info_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/general_info_image">
+
+                    <!-- Type of estate -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_type_dropdown_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Type of Estate"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@+id/estate_tf_price"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:startIconDrawable="@drawable/ic_appartment">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/estate_type_autocomplete"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Price -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_tf_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Price"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@+id/estate_tf_description"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/estate_type_dropdown_layout"
+                        app:startIconDrawable="@drawable/ic_money">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_ed_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:nextFocusDown="@id/estate_ed_description" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- DESCRIPTION -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_tf_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="Description"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/estate_tf_price"
+                        app:startIconDrawable="@drawable/ic_description">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_ed_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="textMultiLine"
+                            android:nextFocusDown="@id/address_layout" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Address -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/indoor_info_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/general_info_layout">
+
+                <ImageView
+                    android:id="@+id/address_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ic_location"
+                    android:contentDescription="Address image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/address_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    app:layout_constraintBottom_toBottomOf="@+id/address_image"
+                    app:layout_constraintStart_toEndOf="@+id/address_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/address_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/address_image">
+
+                    <!-- Label and way number -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/address_tf_way"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Label and way number"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@+id/address_tf_complement"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address_way"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Complement -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/address_tf_complement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="Complement"
+                        app:layout_constraintBottom_toTopOf="@id/address_tf_postal_code"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address_tf_way">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address_complement"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Postal code -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/address_tf_postal_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Postal code"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@id/address_tf_city"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address_tf_complement">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address_postal_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- City -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/address_tf_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="City"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@id/address_tf_state"
+                        app:layout_constraintEnd_toStartOf="@+id/address_tf_state"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address_tf_postal_code">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- State -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/address_tf_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="State"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address_tf_city">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/address_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/indoor_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/interest_points_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_layout">
+
+                <ImageView
+                    android:id="@+id/indoor_info_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/ic_home"
+                    android:contentDescription="Address image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/indoor_info_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Indoor informations"
+                    app:layout_constraintBottom_toBottomOf="@+id/indoor_info_image"
+                    app:layout_constraintStart_toEndOf="@+id/indoor_info_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/indoor_info_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indoor_info_image">
+
+                    <!-- SURFACE -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_tf_surface"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Surface"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@+id/estate_tf_numbers_rooms"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:startIconDrawable="@drawable/ic_surface">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_ed_surface"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- NUMBER OF ROOMS -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_tf_numbers_rooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Number of rooms"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@+id/estate_tf_numbers_bathrooms"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/estate_tf_surface"
+                        app:startIconDrawable="@drawable/ic_home">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_ed_numbers_rooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- NUMBER OF BATHROOMS -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_tf_numbers_bathrooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Number of bathrooms"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toTopOf="@+id/estate_tf_numbers_bedrooms"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/estate_tf_numbers_rooms"
+                        app:startIconDrawable="@drawable/ic_bathtub">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_ed_numbers_bathrooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- NUMBER OF BEDROOMS -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/estate_tf_numbers_bedrooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Number of bedrooms"
+                        app:helperText="*Required"
+                        app:helperTextEnabled="true"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/estate_tf_numbers_bathrooms"
+                        app:startIconDrawable="@drawable/ic_bed">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/estate_bed_numbers_bedrooms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/interest_points_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/recycler_view_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indoor_info_layout">
+
+                <ImageView
+                    android:id="@+id/interest_points_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_location"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/interest_points_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Interest Points"
+                    app:layout_constraintBottom_toBottomOf="@+id/interest_points_image"
+                    app:layout_constraintStart_toEndOf="@+id/interest_points_image" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/interest_points_chips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/interest_points_title">
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/estate_chip_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/estate_chip_school"
+                            style="@style/Widget.MaterialComponents.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="School" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/estate_chip_swimming_pool"
+                            style="@style/Widget.MaterialComponents.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Swimming pool" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/estate_chip_shop"
+                            style="@style/Widget.MaterialComponents.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Shop" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/estate_chip_library"
+                            style="@style/Widget.MaterialComponents.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Library" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/estate_chip_park"
+                            style="@style/Widget.MaterialComponents.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Park" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/estate_chip_restaurant"
+                            style="@style/Widget.MaterialComponents.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:text="Restauarant" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recycler_view_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interest_points_layout"
+                app:layout_constraintBottom_toTopOf="@+id/create_estate_button">
+
+                <ImageView
+                    android:id="@+id/recycler_view_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_photo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recycler_view_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Photos"
+                    app:layout_constraintBottom_toBottomOf="@+id/recycler_view_img"
+                    app:layout_constraintStart_toEndOf="@+id/recycler_view_img" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/recycler_view_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recycler_view_img">
+
+                    <ImageView
+                        android:id="@+id/add_photo_img"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_add_photo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/photo_recycler_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        android:layout_marginStart="16dp"
+                        android:orientation="horizontal"
+                        tools:listitem="@layout/holder_photo"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toTopOf="@id/add_photo_img"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/add_photo_img" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/create_estate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

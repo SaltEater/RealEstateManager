@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_container"
+        android:layout_width="match_parent"
+        android:paddingBottom="24dp"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/toolbar_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_filter">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/real_estate_agent_name_dial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Real estate agent name"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/ic_person">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/real_estate_agent_name_ed_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/radio_group_dial"
+                android:layout_width="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/real_estate_agent_name_dial">
+
+                <RadioButton
+                    android:id="@+id/radio_button_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_on_sale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Only on sale" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_sold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Only sold" />
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/entry_date_begin"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Real estate agent name"
+                app:helperTextEnabled="true"
+                android:layout_marginVertical="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toStartOf="@+id/entry_date_end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radio_group_dial"
+                app:startIconDrawable="@drawable/ic_date_range">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/entry_date_begin_ed_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/entry_date_end"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Real estate agent name"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/entry_date_begin"
+                app:layout_constraintTop_toTopOf="@+id/entry_date_begin"
+                app:startIconDrawable="@drawable/ic_date_range">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/entry_date_end_ed_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sold_date_begin"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Real estate agent name"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/sold_date_end"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/entry_date_begin"
+                app:startIconDrawable="@drawable/ic_date_range">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sold_date_begin_ed_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sold_date_end"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Real estate agent name"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sold_date_begin"
+                app:layout_constraintTop_toTopOf="@+id/sold_date_begin"
+                app:startIconDrawable="@drawable/ic_date_range">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sold_date_end_ed_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_type_dropdown_layout_dial"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type of Estate"
+                app:helperTextEnabled="true"
+                android:layout_marginVertical="24dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sold_date_begin"
+                app:startIconDrawable="@drawable/ic_appartment">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/estate_type_autocomplete_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_price_min"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Min price"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/estate_tf_price_max"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintTop_toBottomOf="@id/estate_type_dropdown_layout_dial"
+                app:startIconDrawable="@drawable/ic_money">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_price_min_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@id/estate_ed_description" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_price_max"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Max price"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/estate_tf_price_min"
+                app:layout_constraintTop_toTopOf="@+id/estate_tf_price_min"
+                app:startIconDrawable="@drawable/ic_money">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_price_max_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:nextFocusDown="@id/estate_ed_description" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_tf_postal_code_dial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Postal code"
+                app:helperTextEnabled="true"
+                android:layout_marginVertical="24dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estate_tf_price_min">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_postal_code_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_tf_city_dial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                app:helperTextEnabled="true"
+                android:layout_marginVertical="24dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_tf_postal_code_dial">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- State -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/address_tf_state_dial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="State"
+                android:layout_marginVertical="24dp"
+
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_tf_city_dial">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_surface_min_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Min surface"
+                app:helperTextEnabled="true"
+                android:layout_marginVertical="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toStartOf="@+id/estate_tf_surface_max_dial"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_tf_state_dial"
+                app:startIconDrawable="@drawable/ic_surface">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_surface_min_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_surface_max_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Max surface"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/estate_tf_surface_min_dial"
+                app:layout_constraintTop_toTopOf="@+id/estate_tf_surface_min_dial"
+                app:startIconDrawable="@drawable/ic_surface">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_surface_max_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_numbers_rooms_min_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:hint="Min number of rooms"
+                app:helperTextEnabled="true"
+                android:layout_marginVertical="24dp"
+                app:layout_constraintEnd_toStartOf="@+id/estate_tf_numbers_rooms_max_dial"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estate_tf_surface_min_dial"
+                app:startIconDrawable="@drawable/ic_home">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_numbers_rooms_min_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_numbers_rooms_max_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Max number of rooms"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/estate_tf_numbers_rooms_min_dial"
+                app:layout_constraintTop_toTopOf="@+id/estate_tf_numbers_rooms_min_dial"
+                app:startIconDrawable="@drawable/ic_home">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_numbers_rooms_max_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_numbers_bathrooms_min_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:layout_marginEnd="24dp"
+                android:hint="Min number of bathrooms"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/estate_tf_numbers_bathrooms_max_dial"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estate_tf_numbers_rooms_min_dial"
+                app:startIconDrawable="@drawable/ic_bathtub">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_numbers_bathrooms_min_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_numbers_bathrooms_max_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Max number of bathrooms"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/estate_tf_numbers_bathrooms_min_dial"
+                app:layout_constraintTop_toTopOf="@+id/estate_tf_numbers_bathrooms_min_dial"
+                app:startIconDrawable="@drawable/ic_bathtub">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_ed_numbers_bathrooms_max_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_numbers_bedrooms_min_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:layout_marginEnd="24dp"
+                android:hint="Min number of bedrooms"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/estate_tf_numbers_bedrooms_max_dial"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estate_tf_numbers_bathrooms_min_dial"
+                app:startIconDrawable="@drawable/ic_bed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_bed_numbers_bedrooms_min_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/estate_tf_numbers_bedrooms_max_dial"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:hint="Min number of bedrooms"
+                app:helperTextEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/estate_tf_numbers_bedrooms_min_dial"
+                app:layout_constraintTop_toTopOf="@+id/estate_tf_numbers_bedrooms_min_dial"
+                app:startIconDrawable="@drawable/ic_bed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estate_bed_numbers_bedrooms_max_dial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/estate_chip_group_dial"
+                android:layout_marginVertical="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estate_tf_numbers_bedrooms_min_dial">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/estate_chip_school_dial"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="School" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/estate_chip_swimming_pool_dial"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Swimming pool" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/estate_chip_shop_dial"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Shop" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/estate_chip_library_dial"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Library" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/estate_chip_park_dial"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Park" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/estate_chip_restaurant_dial"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="Restauarant" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
