@@ -7,19 +7,19 @@
         <item
         android:id="@+id/activity_main_menu_add"
         android:icon="@drawable/ic_add"
-        android:title="Add"
+        android:title="@string/add"
         app:showAsAction="ifRoom" />
 
         <item
             android:id="@+id/activity_main_menu_edit"
             android:icon="@drawable/ic_edit"
-            android:title="Edit"
+            android:title="@string/edit"
             app:showAsAction="ifRoom" />
 
         <item
             android:id="@+id/activity_main_menu_search"
             android:icon="@drawable/ic_search"
-            android:title="Search"
+            android:title="@string/search"
             app:showAsAction="ifRoom" />
     </group>
 

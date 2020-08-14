@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Media"
+                    android:text="@string/media"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="Description"
+                    android:text="@string/description"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -99,6 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_surface"
+                        android:contentDescription="@string/image"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,7 +108,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Surface"
+                        android:text="@string/surface"
                         app:layout_constraintStart_toEndOf="@+id/surface_icon"
                         app:layout_constraintTop_toTopOf="@+id/surface_icon" />
 
@@ -116,7 +117,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Unknown value"
+                        android:text="@string/unknown_value"
                         app:layout_constraintStart_toStartOf="@+id/surface_title"
                         app:layout_constraintTop_toBottomOf="@+id/surface_title" />
 
@@ -135,6 +136,7 @@
                         android:id="@+id/number_rooms_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/image"
                         android:src="@drawable/ic_home"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -144,7 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Number of rooms"
+                        android:text="@string/number_of_rooms"
                         app:layout_constraintStart_toEndOf="@+id/number_rooms_icon"
                         app:layout_constraintTop_toTopOf="@+id/number_rooms_icon" />
 
@@ -153,7 +155,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Unknown value"
+                        android:text="@string/unknown_value"
                         app:layout_constraintStart_toStartOf="@+id/number_rooms_title"
                         app:layout_constraintTop_toBottomOf="@+id/number_rooms_title" />
 
@@ -174,6 +176,7 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_bathtub"
                         app:layout_constraintStart_toStartOf="parent"
+                        android:contentDescription="@string/image"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -181,7 +184,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Number of bathrooms"
+                        android:text="@string/number_of_bathrooms"
                         app:layout_constraintStart_toEndOf="@+id/number_bathrooms_icon"
                         app:layout_constraintTop_toTopOf="@+id/number_bathrooms_icon" />
 
@@ -190,7 +193,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Unknown value"
+                        android:text="@string/unknown_value"
                         app:layout_constraintStart_toStartOf="@+id/number_bathrooms_title"
                         app:layout_constraintTop_toBottomOf="@+id/number_bathrooms_title" />
 
@@ -206,6 +209,7 @@
 
                     <ImageView
                         android:id="@+id/number_bedrooms_icon"
+                        android:contentDescription="@string/image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_bed"
@@ -217,7 +221,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Number of bedrooms"
+                        android:text="@string/number_of_bedrooms"
                         app:layout_constraintStart_toEndOf="@+id/number_bedrooms_icon"
                         app:layout_constraintTop_toTopOf="@+id/number_bedrooms_icon" />
 
@@ -226,7 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Unknown value"
+                        android:text="@string/unknown_value"
                         app:layout_constraintStart_toStartOf="@+id/number_bedrooms_title"
                         app:layout_constraintTop_toBottomOf="@+id/number_bedrooms_title" />
 
@@ -243,6 +247,7 @@
                     <ImageView
                         android:id="@+id/location_icon"
                         android:layout_width="wrap_content"
+                        android:contentDescription="@string/image"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_location"
                         app:layout_constraintStart_toStartOf="parent"
@@ -253,7 +258,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:text="Location"
+                        android:text="@string/location"
                         app:layout_constraintStart_toEndOf="@+id/location_icon"
                         app:layout_constraintTop_toTopOf="@+id/location_icon" />
 
@@ -262,7 +267,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="Unknown address"
+                        android:text="@string/unknown_address"
                         app:layout_constraintStart_toStartOf="@+id/location_title"
                         app:layout_constraintTop_toBottomOf="@+id/location_title" />
 
@@ -274,6 +279,7 @@
                     android:layout_height="256dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
+                    android:contentDescription="@string/map_image"
                     android:scaleType="centerCrop"
                     android:paddingBottom="32dp"
                     app:layout_constraintStart_toStartOf="parent"

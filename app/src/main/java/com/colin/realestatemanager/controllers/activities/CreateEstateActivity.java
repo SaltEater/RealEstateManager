@@ -1,5 +1,6 @@
 package com.colin.realestatemanager.controllers.activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,26 +20,22 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import com.colin.realestatemanager.R;
 import com.colin.realestatemanager.models.Estate;
 import com.colin.realestatemanager.models.Photo;
+import com.colin.realestatemanager.utils.ImagePickerUtils;
 import com.colin.realestatemanager.utils.Utils;
 import com.colin.realestatemanager.viewmodels.CreateEstateViewModel;
 import com.colin.realestatemanager.views.PhotoAlertDialog;
 import com.colin.realestatemanager.views.PhotoListAdapter;
 import com.google.android.material.chip.Chip;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.Calendar;
 import java.util.Date;
 import butterknife.BindView;
 import butterknife.OnClick;
-
 import static butterknife.ButterKnife.bind;
-import static com.colin.realestatemanager.views.PhotoAlertDialog.CAMERA_REQUEST;
-import static com.colin.realestatemanager.views.PhotoAlertDialog.GALLERY_PICTURE;
 
 public class CreateEstateActivity extends AppCompatActivity implements PhotoAlertDialog.PhotoAlertDialogListener, DatePickerDialog.OnDateSetListener {
     @BindView(R.id.estate_type_dropdown_layout)
@@ -98,7 +96,6 @@ public class CreateEstateActivity extends AppCompatActivity implements PhotoAler
 
     private String[] estateTypes = new String[]{"Apartment", "Chalet", "Bungalow", "Mansion"};
     private PhotoListAdapter adapter;
-    private String photoNameDialog;
 
     private CreateEstateViewModel createEstateViewModel;
 
@@ -174,12 +171,6 @@ public class CreateEstateActivity extends AppCompatActivity implements PhotoAler
         soldDate.setEnabled(false);
     }
 
-    @Override
-    public void applyText(String name, Intent intent, int tag) {
-        photoNameDialog = name;
-        startActivityForResult(intent, tag);
-    }
-
     @OnClick(R.id.add_photo_img)
     public void onClickAddPhoto() {
         PhotoAlertDialog dialog = new PhotoAlertDialog();
@@ -211,34 +202,56 @@ public class CreateEstateActivity extends AppCompatActivity implements PhotoAler
     }
 
     // ---------------
-    // OTHERS
+    // DIALOG
     // --------------
 
+    private String photoName = "";
+
+    @Override
+    public void dialogResult(String name, int tag) {
+        photoName = name;
+        if (ImagePickerUtils.checkAndRequestPerms(this, tag)) {
+            startActivityForResult(ImagePickerUtils.createIntent(tag), tag);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == ImagePickerUtils.GALLERY_REQUEST || requestCode == ImagePickerUtils.CAMERA_REQUEST) {
+            if (grantResults.length > 0 &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                startActivityForResult(ImagePickerUtils.createIntent(requestCode), requestCode);
+            }
+        }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == CAMERA_REQUEST) {
-            Photo photo = new Photo(photoNameDialog, Utils.getCameraFilePath(), -1);
+        if (resultCode == RESULT_OK && requestCode == ImagePickerUtils.CAMERA_REQUEST) {
+            Photo photo = new Photo(photoName, ImagePickerUtils.getCameraFilePath(), -1);
             adapter.addPhoto(photo);
-        } else if (resultCode == RESULT_OK && requestCode == GALLERY_PICTURE && data != null) {
-            Photo photo = new Photo(photoNameDialog, Utils.getGalleryFilePath(data, this), -1);
+        } else if (resultCode == RESULT_OK && requestCode == ImagePickerUtils.GALLERY_REQUEST && data != null) {
+            Photo photo = new Photo(photoName, ImagePickerUtils.getGalleryFilePath(data, this), -1);
             adapter.addPhoto(photo);
         }
     }
-
 
     // --------------
     // ESTATE
     // --------------
 
     private boolean checkEstateCreation() {
-        return (!Utils.getText(agentName).equals("")) && (!Utils.getText(entryDate).equals("")) && (!soldSwitch.isChecked() || !Utils.getText(soldDate).equals(""))
+        boolean b = (!Utils.getText(agentName).equals("")) && (!Utils.getText(entryDate).equals("")) && (!soldSwitch.isChecked() || !Utils.getText(soldDate).equals(""))
                 && (!estateTypeAutoComplete.getText().toString().equals("")) && (!Utils.getText(priceText).equals("")) && (!Utils.getText(descriptionText).equals(""))
                 && (!Utils.getText(addressText).equals("")) && (!Utils.getText(postalCodeText).equals("")) && (!Utils.getText(cityText).equals(""))
                 && (!Utils.getText(stateText).equals("")) && (!Utils.getText(surfaceText).equals("")) && (!Utils.getText(numberRoomsText).equals(""))
                 && (!Utils.getText(numberBathroomsText).equals("")) && (!Utils.getText(numberBedroomsText).equals("")) && (createEstateViewModel.getPhotosLiveData().getValue().size() != 0);
+        if (!b) {
+            Toast.makeText(this, "Some required fields are missing !", Toast.LENGTH_SHORT).show();
+        }
+        return b;
     }
 
     private void createEstate() {

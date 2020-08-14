@@ -3,6 +3,7 @@ package com.colin.realestatemanager;
 import org.junit.Test;
 
 import static com.colin.realestatemanager.utils.Utils.convertDollarToEuro;
+import static com.colin.realestatemanager.utils.Utils.convertEuroToDollar;
 import static com.colin.realestatemanager.utils.Utils.getTodayDate;
 import static org.junit.Assert.*;
 
@@ -18,8 +19,13 @@ public class UtilsUnitTest {
     }
 
     @Test
+    public void convert_10_euros_to_dollar_isCorrect() {
+        assertEquals((int) Math.round(10 / 0.812), convertEuroToDollar(10));
+    }
+
+    @Test
     public void today_date_isCorrect() {
-        assertEquals("13/08/2020", getTodayDate());
+        assertEquals("14/08/2020", getTodayDate());
     }
 
 }

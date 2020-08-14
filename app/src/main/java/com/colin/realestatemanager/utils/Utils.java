@@ -36,7 +36,7 @@ public class Utils {
     }
 
     public static int convertEuroToDollar(int euros) {
-        return (int) (euros / 0.812);
+        return (int) Math.round(euros / 0.812);
     }
 
     /**
@@ -65,9 +65,8 @@ public class Utils {
     }
 
     public static String timestampToString(Long timestamp) {
-        Calendar cal = Calendar.getInstance(Locale.getDefault());
-        cal.setTimeInMillis(timestamp * 1000L);
-        return dateFormat.format(cal);
+        Date date = new Date(timestamp);
+        return dateFormat.format(date);
     }
 
     public static Date stringToDate(String sDate) {
@@ -116,29 +115,6 @@ public class Utils {
 
     // FETCH FILE PATH
 
-    public static String getCameraFilePath() {
-        File f = new File(Environment.getExternalStorageDirectory()
-                .toString());
-        for (File temp : f.listFiles()) {
-            if (temp.getName().equals("temp.jpg")) {
-                f = temp;
-                break;
-            }
-        }
-        return f.getAbsolutePath();
-    }
-
-    public static String getGalleryFilePath(@NonNull Intent data, Context context) {
-        Uri selectedImage = data.getData();
-        String[] filePath = {MediaStore.Images.Media.DATA};
-        Cursor c = context.getContentResolver().query(selectedImage, filePath,
-                null, null, null);
-        c.moveToFirst();
-        int columnIndex = c.getColumnIndex(filePath[0]);
-        String selectedImagePath = c.getString(columnIndex);
-        c.close();
-        return selectedImagePath;
-    }
 
     // FETCH TEXT
 

@@ -27,48 +27,49 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/estate_state_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/ic_description"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_description"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/estate_state_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toEndOf="@+id/estate_state_image"
-                    app:layout_constraintBottom_toBottomOf="@+id/estate_state_image"
                     android:layout_marginStart="8dp"
-                    android:text="State of the estate"/>
+                    android:text="@string/state_of_the_estate"
+                    app:layout_constraintBottom_toBottomOf="@+id/estate_state_image"
+                    app:layout_constraintStart_toEndOf="@+id/estate_state_image" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/estate_state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/estate_state_image"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginStart="32dp"
-                    android:layout_marginEnd="32dp">
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/estate_state_image">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/real_estate_agent_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Real estate agent name"
+                        android:hint="@string/real_estate_agent_name"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:startIconDrawable="@drawable/ic_person">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -85,30 +86,30 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="8dp"
-                        android:text="Sold"
+                        android:text="@string/sold"
                         android:textSize="18sp"
-                        app:layout_constraintTop_toBottomOf="@+id/real_estate_agent_name"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toBottomOf="@+id/real_estate_agent_name" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/estate_entry_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Entry date"
                         android:layout_marginTop="8dp"
+                        android:hint="@string/entry_date"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
-                        app:layout_constraintTop_toBottomOf="@id/sold_estate_switch"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sold_estate_switch"
                         app:startIconDrawable="@drawable/ic_date_range">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/estate_entry_date_ed"
-                            android:focusable="false"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:focusable="false"
                             android:imeOptions="actionNext"
                             android:inputType="text" />
 
@@ -118,13 +119,13 @@
                         android:id="@+id/estate_sold_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Sold date"
                         android:layout_marginVertical="8dp"
+                        android:hint="@string/sold_date"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
-                        app:layout_constraintTop_toBottomOf="@id/estate_entry_date"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/estate_entry_date"
                         app:startIconDrawable="@drawable/ic_date_range">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -156,19 +157,19 @@
                     android:id="@+id/general_info_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="General information image"
+                    android:contentDescription="@string/general_information_image"
+                    android:src="@drawable/ic_home"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_home" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/general_info_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:text="@string/general_informations"
                     app:layout_constraintBottom_toBottomOf="@+id/general_info_image"
-                    app:layout_constraintStart_toEndOf="@+id/general_info_image"
-                    android:text="General informations" />
+                    app:layout_constraintStart_toEndOf="@+id/general_info_image" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/general_info_content_layout"
@@ -187,7 +188,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Type of Estate"
+                        android:hint="@string/type_of_estate"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@+id/estate_tf_price"
@@ -210,7 +211,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Price"
+                        android:hint="@string/price"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@+id/estate_tf_description"
@@ -235,7 +236,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:hint="Description"
+                        android:hint="@string/description"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -274,7 +275,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/ic_location"
-                    android:contentDescription="Address image"
+                    android:contentDescription="@string/address_image"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -282,7 +283,7 @@
                     android:id="@+id/address_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Address"
+                    android:text="@string/address"
                     app:layout_constraintBottom_toBottomOf="@+id/address_image"
                     app:layout_constraintStart_toEndOf="@+id/address_image"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -303,7 +304,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Label and way number"
+                        android:hint="@string/label_and_way_number"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@+id/address_tf_complement"
@@ -326,7 +327,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:hint="Complement"
+                        android:hint="@string/complement"
                         app:layout_constraintBottom_toTopOf="@id/address_tf_postal_code"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -346,7 +347,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Postal code"
+                        android:hint="@string/postal_code"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@id/address_tf_city"
@@ -369,7 +370,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:hint="City"
+                        android:hint="@string/city"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@id/address_tf_state"
@@ -392,7 +393,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:hint="State"
+                        android:hint="@string/state"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -427,7 +428,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:background="@drawable/ic_home"
-                    android:contentDescription="Address image"
+                    android:contentDescription="@string/address_image"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -435,7 +436,7 @@
                     android:id="@+id/indoor_info_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Indoor informations"
+                    android:text="@string/indoor_informations"
                     app:layout_constraintBottom_toBottomOf="@+id/indoor_info_image"
                     app:layout_constraintStart_toEndOf="@+id/indoor_info_image"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -458,7 +459,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Surface"
+                        android:hint="@string/surface"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@+id/estate_tf_numbers_rooms"
@@ -480,7 +481,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Number of rooms"
+                        android:hint="@string/number_of_rooms"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@+id/estate_tf_numbers_bathrooms"
@@ -502,7 +503,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Number of bathrooms"
+                        android:hint="@string/number_of_bathrooms"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toTopOf="@+id/estate_tf_numbers_bedrooms"
@@ -525,7 +526,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:hint="Number of bedrooms"
+                        android:hint="@string/number_of_bedrooms"
                         app:helperText="*Required"
                         app:helperTextEnabled="true"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -561,6 +562,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/ic_location"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -569,7 +571,7 @@
                     android:id="@+id/interest_points_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Interest Points"
+                    android:text="@string/interest_points"
                     app:layout_constraintBottom_toBottomOf="@+id/interest_points_image"
                     app:layout_constraintStart_toEndOf="@+id/interest_points_image" />
 
@@ -600,43 +602,42 @@
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
                             android:layout_marginStart="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:text="School" />
+                            android:text="@string/school" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/estate_chip_swimming_pool"
                             style="@style/Widget.MaterialComponents.Chip.Filter"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Swimming pool" />
+                            android:text="@string/swimming_pool" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/estate_chip_shop"
                             style="@style/Widget.MaterialComponents.Chip.Filter"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Shop" />
+                            android:text="@string/shop" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/estate_chip_library"
                             style="@style/Widget.MaterialComponents.Chip.Filter"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Library" />
+                            android:text="@string/library" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/estate_chip_park"
                             style="@style/Widget.MaterialComponents.Chip.Filter"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Park" />
+                            android:text="@string/park" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/estate_chip_restaurant"
                             style="@style/Widget.MaterialComponents.Chip.Filter"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:text="Restauarant" />
+                            android:text="@string/restaurant" />
 
                     </com.google.android.material.chip.ChipGroup>
 
@@ -648,15 +649,16 @@
                 android:id="@+id/recycler_view_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/create_estate_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/interest_points_layout"
-                app:layout_constraintBottom_toTopOf="@+id/create_estate_button">
+                app:layout_constraintTop_toBottomOf="@+id/interest_points_layout">
 
                 <ImageView
                     android:id="@+id/recycler_view_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/image"
                     android:src="@drawable/ic_add_photo"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -666,7 +668,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Photos"
+                    android:text="@string/photos"
                     app:layout_constraintBottom_toBottomOf="@+id/recycler_view_img"
                     app:layout_constraintStart_toEndOf="@+id/recycler_view_img" />
 
@@ -684,22 +686,23 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:layout_marginStart="8dp"
+                        android:contentDescription="@string/image"
                         android:src="@drawable/ic_add_photo"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/photo_recycler_view"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="32dp"
                         android:layout_marginStart="16dp"
+                        android:layout_marginBottom="32dp"
                         android:orientation="horizontal"
-                        tools:listitem="@layout/holder_photo"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintTop_toTopOf="@id/add_photo_img"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/add_photo_img" />
+                        app:layout_constraintStart_toEndOf="@id/add_photo_img"
+                        app:layout_constraintTop_toTopOf="@id/add_photo_img"
+                        tools:listitem="@layout/holder_photo" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -709,10 +712,10 @@
                 android:id="@+id/create_estate_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_margin="32dp"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:text="@string/create"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

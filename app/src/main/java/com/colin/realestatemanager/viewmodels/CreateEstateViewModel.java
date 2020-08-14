@@ -1,17 +1,13 @@
 package com.colin.realestatemanager.viewmodels;
 
 import android.app.Application;
-
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-
 import com.colin.realestatemanager.injections.Injection;
 import com.colin.realestatemanager.models.Estate;
 import com.colin.realestatemanager.models.Photo;
 import com.colin.realestatemanager.repositories.EstateRepository;
 import com.colin.realestatemanager.repositories.PhotoRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;

@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Features">
+        android:title="@string/features">
         <menu>
             <item
                 android:id="@+id/nav_simulation"
                 android:icon="@drawable/ic_edit"
-                android:title="Simulation" />
+                android:title="@string/simulation" />
             <item
                 android:id="@+id/nav_map"
                 android:icon="@drawable/ic_map"
-                android:title="Map" />
+                android:title="@string/map" />
         </menu>
     </item>
 

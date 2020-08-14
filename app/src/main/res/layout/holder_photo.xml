@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/estate_image" />
 
     <TextView
         android:id="@+id/photo_txt"
@@ -23,8 +24,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/photo_img"
         app:layout_constraintStart_toStartOf="@+id/photo_img"
         app:layout_constraintEnd_toEndOf="@+id/photo_img"
-        android:background="#8000"
-        android:textColor="#FFFF"
+        android:background="@color/light_black"
+        android:textColor="@color/white"
         android:textAlignment="center"
         tools:text="Photo title"/>
 

@@ -9,8 +9,11 @@
         android:id="@+id/photo_name_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Set the photo name"
+        android:hint="@string/set_the_photo_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:autofillHints=""
+        android:inputType="text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

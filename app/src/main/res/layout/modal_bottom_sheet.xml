@@ -32,7 +32,7 @@
                 android:id="@+id/real_estate_agent_name_dial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Real estate agent name"
+                android:hint="@string/real_estate_agent_name"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,19 +60,19 @@
                     android:id="@+id/radio_button_all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="All" />
+                    android:text="@string/all" />
 
                 <RadioButton
                     android:id="@+id/radio_button_on_sale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Only on sale" />
+                    android:text="@string/only_on_sale" />
 
                 <RadioButton
                     android:id="@+id/radio_button_sold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Only sold" />
+                    android:text="@string/only_sold" />
 
             </RadioGroup>
 
@@ -80,7 +80,7 @@
                 android:id="@+id/entry_date_begin"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Real estate agent name"
+                android:hint="@string/real_estate_agent_name"
                 app:helperTextEnabled="true"
                 android:layout_marginVertical="24dp"
                 android:layout_marginEnd="24dp"
@@ -102,7 +102,7 @@
                 android:id="@+id/entry_date_end"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Real estate agent name"
+                android:hint="@string/real_estate_agent_name"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/entry_date_begin"
@@ -122,7 +122,7 @@
                 android:id="@+id/sold_date_begin"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Real estate agent name"
+                android:hint="@string/real_estate_agent_name"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toStartOf="@+id/sold_date_end"
                 app:layout_constraintStart_toStartOf="parent"
@@ -144,7 +144,7 @@
                 android:id="@+id/sold_date_end"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Real estate agent name"
+                android:hint="@string/real_estate_agent_name"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/sold_date_begin"
@@ -165,7 +165,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Type of Estate"
+                android:hint="@string/type_of_estate"
                 app:helperTextEnabled="true"
                 android:layout_marginVertical="24dp"
 
@@ -185,7 +185,7 @@
                 android:id="@+id/estate_tf_price_min"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Min price"
+                android:hint="@string/min_price"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toStartOf="@+id/estate_tf_price_max"
                 app:layout_constraintStart_toStartOf="parent"
@@ -207,7 +207,7 @@
                 android:id="@+id/estate_tf_price_max"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Max price"
+                android:hint="@string/max_price"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/estate_tf_price_min"
@@ -228,7 +228,7 @@
                 android:id="@+id/address_tf_postal_code_dial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Postal code"
+                android:hint="@string/postal_code"
                 app:helperTextEnabled="true"
                 android:layout_marginVertical="24dp"
 
@@ -248,7 +248,7 @@
                 android:id="@+id/address_tf_city_dial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="City"
+                android:hint="@string/city"
                 app:helperTextEnabled="true"
                 android:layout_marginVertical="24dp"
 
@@ -269,7 +269,7 @@
                 android:id="@+id/address_tf_state_dial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="State"
+                android:hint="@string/state"
                 android:layout_marginVertical="24dp"
 
                 app:helperTextEnabled="true"
@@ -289,7 +289,7 @@
                 android:id="@+id/estate_tf_surface_min_dial"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Min surface"
+                android:hint="@string/min_surface"
                 app:helperTextEnabled="true"
                 android:layout_marginVertical="24dp"
                 android:layout_marginEnd="24dp"
@@ -309,7 +309,7 @@
                 android:id="@+id/estate_tf_surface_max_dial"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Max surface"
+                android:hint="@string/max_surface"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/estate_tf_surface_min_dial"
@@ -329,7 +329,7 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
-                android:hint="Min number of rooms"
+                android:hint="@string/min_number_of_rooms"
                 app:helperTextEnabled="true"
                 android:layout_marginVertical="24dp"
                 app:layout_constraintEnd_toStartOf="@+id/estate_tf_numbers_rooms_max_dial"
@@ -349,7 +349,7 @@
                 android:id="@+id/estate_tf_numbers_rooms_max_dial"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Max number of rooms"
+                android:hint="@string/max_number_of_rooms"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/estate_tf_numbers_rooms_min_dial"
@@ -370,7 +370,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="24dp"
                 android:layout_marginEnd="24dp"
-                android:hint="Min number of bathrooms"
+                android:hint="@string/min_number_of_bathrooms"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toStartOf="@+id/estate_tf_numbers_bathrooms_max_dial"
                 app:layout_constraintStart_toStartOf="parent"
@@ -388,7 +388,7 @@
                 android:id="@+id/estate_tf_numbers_bathrooms_max_dial"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:hint="Max number of bathrooms"
+                android:hint="@string/max_number_of_bathrooms"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/estate_tf_numbers_bathrooms_min_dial"
@@ -408,7 +408,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="24dp"
                 android:layout_marginEnd="24dp"
-                android:hint="Min number of bedrooms"
+                android:hint="@string/number_of_bedrooms"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toStartOf="@+id/estate_tf_numbers_bedrooms_max_dial"
                 app:layout_constraintStart_toStartOf="parent"
@@ -455,43 +455,42 @@
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="School" />
+                    android:text="@string/school" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/estate_chip_swimming_pool_dial"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:text="Swimming pool" />
+                    android:text="@string/swimming_pool" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/estate_chip_shop_dial"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:text="Shop" />
+                    android:text="@string/shop" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/estate_chip_library_dial"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:text="Library" />
+                    android:text="@string/library" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/estate_chip_park_dial"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:text="Park" />
+                    android:text="@string/park" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/estate_chip_restaurant_dial"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
-                    android:text="Restauarant" />
+                    android:text="@string/restaurant" />
 
             </com.google.android.material.chip.ChipGroup>
 

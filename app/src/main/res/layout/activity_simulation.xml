@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
                 android:layout_marginTop="8dp"
-                android:hint="Initial amount"
+                android:hint="@string/initial_amount"
                 app:helperText="*Required"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
                 android:layout_marginTop="8dp"
-                android:hint="Rate"
+                android:hint="@string/rate"
                 app:helperText="*Required"
                 app:helperTextEnabled="true"
 
@@ -79,7 +79,7 @@
                 android:layout_marginVertical="8dp"
                 android:layout_marginTop="8dp"
 
-                android:hint="Duration in years"
+                android:hint="@string/duration_in_years"
                 app:helperText="*Required"
                 app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +99,7 @@
                 android:id="@+id/calculate_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SIMULATE"
+                android:text="@string/simulate"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/duration" />
 
@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
-                android:text="Final amount : ... €"
+                android:text="@string/final_amount"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/calculate_button" />
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
-                android:text="Monthly amount : ... € / month"
+                android:text="@string/monthly_amount_month"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/final_amount" />

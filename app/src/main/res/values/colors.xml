@@ -5,8 +5,9 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="hot_pink">#FF69B4</color>
-    909090
+    <color name="white">#FFFFFF</color>
     <color name="dark_gray">#909090</color>
+    <color name="light_black">#8000</color>
 
 
 </resources>
