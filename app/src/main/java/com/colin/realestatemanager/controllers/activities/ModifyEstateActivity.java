@@ -188,7 +188,7 @@ public class ModifyEstateActivity extends AppCompatActivity implements PhotoAler
     }
 
     private void configFields() {
-        priceText.setText(Utils.castIntToString(estateWithPhotos.getEstate().getPrice()));
+        priceText.setText(String.valueOf(estateWithPhotos.getEstate().getPrice()));
         addressText.setText(estateWithPhotos.getEstate().getAddress());
         descriptionText.setText(estateWithPhotos.getEstate().getDescription());
         agentName.setText(estateWithPhotos.getEstate().getRealEstateAgent());
@@ -196,10 +196,10 @@ public class ModifyEstateActivity extends AppCompatActivity implements PhotoAler
         cityText.setText(estateWithPhotos.getEstate().getCity());
         complementText.setText(estateWithPhotos.getEstate().getComplement());
         stateText.setText(estateWithPhotos.getEstate().getState());
-        surfaceText.setText(Utils.castIntToString(estateWithPhotos.getEstate().getSurface()));
-        numberBathroomsText.setText(Utils.castIntToString(estateWithPhotos.getEstate().getNbBathrooms()));
-        numberBedroomsText.setText(Utils.castIntToString(estateWithPhotos.getEstate().getNbBedrooms()));
-        numberRoomsText.setText(Utils.castIntToString(estateWithPhotos.getEstate().getNbRooms()));
+        surfaceText.setText(String.valueOf(estateWithPhotos.getEstate().getSurface()));
+        numberBathroomsText.setText(String.valueOf(estateWithPhotos.getEstate().getNbBathrooms()));
+        numberBedroomsText.setText(String.valueOf(estateWithPhotos.getEstate().getNbBedrooms()));
+        numberRoomsText.setText(String.valueOf(estateWithPhotos.getEstate().getNbRooms()));
         libraryChip.setChecked(estateWithPhotos.getEstate().isLibrary());
         parkChip.setChecked(estateWithPhotos.getEstate().isPark());
         restaurantChip.setChecked(estateWithPhotos.getEstate().isRestaurant());

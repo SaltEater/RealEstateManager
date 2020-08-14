@@ -133,10 +133,4 @@ public class Utils {
         }
     }
 
-    // CAST
-
-    public static String castIntToString(int value) {
-        return value + "";
-    }
-
 }
